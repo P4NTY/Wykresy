@@ -5,6 +5,7 @@ var Tornado = function() {
     chart.config = {
         container: 'tornado_chart',
         width: 500,
+        min_width: 30,
         data: null,
         left_side: {
             color: '#1258DC',
@@ -92,97 +93,15 @@ var Tornado = function() {
 
     }
 
+    chart.build = function() {
+        view = document.createDocumentFragment();
+        items_count = 0;
+
+        chart.config.data.forEach(element => {
+            items_count += element.left_elements.length + element.right_elements.length;
+        })
+        jump = chart.width / (items_count - 1 )
+    }
+
     return chart;
 };
-
-
-var chart = Tornado();
-/*
-    chart.set_data([
-        {
-            level: 1,
-            level_name: 'Poziom_1',
-            level_count : null,
-            left_elements: [
-                {
-                    value: 91750,
-                    name: 'element 1',
-                },
-                {
-                    value: 910,
-                    name: 'element 2',
-                }
-                ],
-            right_elements: []
-        },
-        {
-            level: 2,
-            level_name: 'Poziom_2',
-            level_count : null,
-            left_elements:
-            [
-                {
-                    value: 10151,
-                    name: 'element 3',
-                }
-            ],
-            right_elements:
-            [
-                {
-                    value: 43031,
-                    name: 'element 4',
-                }
-            ]
-        },
-        {
-            level: 3,
-            level_name: 'Pozim 3',
-            level_count : null,
-            left_elements:
-            [
-                {
-                    value: 3022,
-                    name: 'element 5'
-                }
-            ],
-            right_elements:
-            [
-                {
-                    value: 17842,
-                    name: 'element 6',
-                }
-            ]
-        },
-        {
-            level: 4,
-            level_name: 'Pozim 4',
-            level_count : null,
-            left_elements:
-            [
-                {
-                    value: 552,
-                    name: 'element 7'
-                }
-            ],
-            right_elements:
-            [
-                {
-                    value: 2629,
-                    name: 'element 8'
-                }
-            ]
-        }
-    ]);
-*/
-
-/* level, level name, element name , value , side  */
-chart.set_data([
-    ['1','Poziom 1', 'element 1', '91750', '0'],
-    ['1','Poziom 1', 'element 2', '910', '0'],
-    ['2','Poziom 2', 'element 3', '10151', '0'],
-    ['2','Poziom 2', 'element 4', '43031', '1'],
-    ['3','Poziom 3', 'element 5', '3022', '0'],
-    ['3','Poziom 3', 'element 6', '17842', '1'],
-    ['4','Poziom 4', 'element 7', '522', '0'],
-    ['4','Poziom 4', 'element 8', '2629', '1'],
-  ])
