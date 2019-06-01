@@ -1,0 +1,116 @@
+.tornado {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.tornado table,
+.tornado tr,
+.tornado td,
+.tornado th {
+    border-collapse: separate;
+    border-spacing: 0px 0px;
+}
+
+.tornado tr:not(:last-child) td {
+    border-bottom: 1px dashed #091834;
+}
+
+.tornado tr:first-child td {
+    border-bottom: 0;
+}
+
+.tornado tr:first-child {
+    text-align: center;
+}
+
+.tornado tr:first-child td:nth-child(2),
+.tornado tr:not(:first-child) td:nth-child(3) {
+    border-right: 5px dashed #F7E9D4;
+}
+
+.tornado .left {
+    text-align: right;
+}
+
+.tornado .right {
+    text-align: left;
+}
+
+.tornado>tbody>tr:not(:first-child)>td:first-child {
+    white-space: normal;
+    width: 100px;
+    font-weight: bold;
+}
+
+.tornado>tbody>tr:not(:first-child)>td:nth-child(2) {
+    width: 50px;
+}
+
+.tornado .hov {
+    display: inline-table;
+    white-space: normal;
+    vertical-align: middle;
+}
+
+.tornado .hov .on,
+.tornado .hov .out {
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    margin: 0;
+    font-size: 10px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.tornado .hov .on {
+    display: none;
+}
+
+.tornado .hov:hover .on {
+    display: table-cell;
+}
+
+.tornado .hov:hover .out {
+    display: none;
+}
+
+.tornado .left p {
+    background: #1258DC;
+    color: white;
+}
+
+.tornado .right p {
+    background: #FB8604;
+    color: black;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    border: 1px solid #333;
+    background-color: #EEBBEE;
+    border-radius: 5px;
+    padding: 10px;
+    color: black;
+    font-size: 14px;
+}
+
+.tornado .locznie p {
+    font-size: 14px !important;
+}
+
+.tornado .last_layer p {
+    padding-bottom: 5px;
+    padding-right: 5px;
+    height: 90px;
+    width: 20px;
+    text-align: center;
+    margin: 0;
+    font-size: 10px;
+    vertical-align: middle;
+    -webkit-writing-mode: tb;
+    -ms-writing-mode: tb;
+    writing-mode: tb;
+}
